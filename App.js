@@ -14,6 +14,7 @@ import {
   View,
   Text,
   StatusBar,
+  Image,
 } from 'react-native';
 
 import {
@@ -40,7 +41,11 @@ const App: () => React$Node = () => {
           )}
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step Ño</Text>
+              <Image
+                source={require('./assets/logo.png')}
+                style={{width: 200, height: 80}}
+              />
+              <Text style={styles.sectionTitle}>Step one</Text>
               <Text style={styles.sectionDescription}>
                 Edit <Text style={styles.highlight}>App.js</Text> to change this
                 screen and then come back to see your edits.
