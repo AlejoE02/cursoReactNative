@@ -8,7 +8,9 @@ import CategoryList from './src/videos/containers/category-list';
 // import Video from 'react-native-video';
 import Player from './src/player/containers/player';
 import {Provider} from 'react-redux';
-import store from './store';
+import {PersistGate} from 'redux-persist/integration/react';
+import {store, persistor} from './store';
+import Loading from './src/sections/components/loading';
 import API from './utils/api';
 
 type Props = {};
@@ -36,13 +38,15 @@ export default class App extends Component<Props> {
   render() {
     return (
       <Provider store={store}>
-        <Home>
-          <Header />
-          <Player />
-          <Text>buscador</Text>
-          <CategoryList />
-          <SuggestionList />
-        </Home>
+        <PersistGate loading={<Loading />} persistor={persistor}>
+          <Home>
+            <Header />
+            <Player />
+            <Text>buscador</Text>
+            <CategoryList />
+            <SuggestionList />
+          </Home>
+        </PersistGate>
       </Provider>
     );
   }
