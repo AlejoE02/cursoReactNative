@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
-import {Text} from 'react-native';
+import {Text, View} from 'react-native';
 
 import Home from './src/screens/containers/home';
 import Header from './src/sections/components/header';
 import SuggestionList from './src/videos/containers/suggestion-list';
 import CategoryList from './src/videos/containers/category-list';
+// import Video from 'react-native-video';
+import Player from './src/player/containers/player';
 import API from './utils/api';
 
 type Props = {};
@@ -26,7 +28,8 @@ export default class App extends Component<Props> {
   render() {
     return (
       <Home>
-        <Header></Header>
+        <Header />
+        <Player />
         <Text>buscador</Text>
         <Text>categorías</Text>
         <Text>sugerencias</Text>
