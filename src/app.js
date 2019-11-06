@@ -8,6 +8,7 @@ import SuggestionList from './videos/containers/suggestion-list';
 import API from '../utils/api';
 import CategoryList from './videos/containers/category-list';
 import Movie from './screens/containers/movie';
+import Search from './sections/containers/search'
 
 class AppLayout extends Component {
   async componentDidMount() {
@@ -33,7 +34,7 @@ class AppLayout extends Component {
     return (
       <Home>
         <Header />
-        <Text>buscador</Text>
+        <Search/>
         <CategoryList />
         <SuggestionList />
       </Home>
